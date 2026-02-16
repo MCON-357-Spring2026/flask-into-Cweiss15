@@ -63,9 +63,6 @@ def status_not_found(code):
     else:
         return ("Server error", 500)
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
 @app.route('/debug/routes')
 def show_routes():
     routes = []
@@ -76,3 +73,7 @@ def show_routes():
             'path': str(rule)
         })
     return jsonify(routes)
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
